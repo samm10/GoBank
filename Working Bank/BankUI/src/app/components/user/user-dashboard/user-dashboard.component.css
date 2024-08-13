@@ -1,0 +1,118 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Angular Material theme */
+
+.user-dashboard {
+  background-image: url('src/app/assets/User.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1.5s ease-in-out;
+  
+}
+
+.navbar {
+  background-color: #092234; /* Dark Blue */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .nav-link {
+  display: flex;
+  align-items: center;
+  color: #ffffff; /* White */
+}
+
+.nav-link:hover {
+  color: #d1d1d1; /* Light Gray on hover */
+}
+
+.nav-link mat-icon {
+  margin-right: 8px;
+}
+
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.container {
+  flex: 1;
+  padding-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: #114806; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+  padding: 10px 0; /* Reduced padding */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px; /* Reduced margin-top */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 10px; /* Reduced margin */
+}
+
+.footer-section h4 {
+  margin-bottom: 8px; /* Reduced margin-bottom */
+  font-size: 16px; /* Slightly smaller font-size */
+}
+
+.footer-section p, .footer-section ul {
+  margin: 0;
+  font-size: 12px; /* Smaller font-size */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px; /* Reduced margin-bottom */
+}
+
+.footer-section ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  font-size: 20px; /* Smaller font-size */
+  margin-right: 10px; /* Reduced margin */
+  color: #f0f0f0;
+}
+
+.social-icon:hover {
+  color: #ffeb3b; /* Highlight color on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px; /* Reduced margin-top */
+  font-size: 12px; /* Smaller font-size */
+}

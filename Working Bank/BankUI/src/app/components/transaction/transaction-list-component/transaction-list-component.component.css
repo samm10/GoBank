@@ -1,0 +1,112 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Angular Material theme */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.date-field{
+  width: 200px;
+  display:flexbox;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.search-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.search-button {
+  height: 56px; /* Match the height of the input field */
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field .mat-label {
+  font-weight: bold;
+}
+
+.mat-form-field .mat-input-element {
+  border-radius: 4px;
+}
+
+.mat-button {
+  margin-top: 10px;
+}
+
+.transaction-table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.transaction-table thead th {
+  background-color: #21457a;
+  color: #fff;
+}
+
+.transaction-table tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.transaction-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.transaction-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.success-icon {
+  color: #28a745; /* Green */
+}
+
+.failed-icon {
+  color: #dc3545; /* Red */
+}
+
+.admin-container, .user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
+
+.alert-success {
+  background-color: #28a745;
+}

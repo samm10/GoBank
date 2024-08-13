@@ -1,0 +1,67 @@
+<h2>Create Account</h2>
+
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="userId">User ID</label>
+    <input id="userId" formControlName="userId" class="form-control" [value]="userId" readonly>
+    <div *ngIf="accountForm.get('userId')?.invalid && accountForm.get('userId')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('userId')?.errors?.['required']">User ID is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ifsc">IFSC</label>
+    <input id="ifsc" formControlName="ifsc" class="form-control" value="MYBK000123987" readonly>
+    <div *ngIf="accountForm.get('ifsc')?.invalid && accountForm.get('ifsc')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('ifsc')?.errors?.['required']">IFSC code is required.</div>
+      <div *ngIf="accountForm.get('ifsc')?.errors?.['pattern']">Invalid IFSC code format.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="branchName">Branch Name</label>
+    <input id="branchName" formControlName="branchName" class="form-control" value="Belapur Thane Road Airoli" readonly>
+    <div *ngIf="accountForm.get('branchName')?.invalid && accountForm.get('branchName')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('branchName')?.errors?.['required']">Branch Name is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="accountType">Account Type</label>
+    <select id="accountType" formControlName="accountType" class="form-control">
+      <option value="">Select Account Type</option>
+      <option value="Current">Current</option>
+      <option value="Saving">Saving</option>
+    </select>
+    <div *ngIf="accountForm.get('accountType')?.invalid && accountForm.get('accountType')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('accountType')?.errors?.['required']">Account Type is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="addressLine">Address</label>
+    <input id="addressLine" formControlName="addressLine" class="form-control" value="Belapur Thane Road Airoli" readonly>
+    <div *ngIf="accountForm.get('addressLine')?.invalid && accountForm.get('addressLine')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('addressLine')?.errors?.['required']">Address is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input id="city" formControlName="city" class="form-control" value="Navi Mumbai" readonly>
+    <div *ngIf="accountForm.get('city')?.invalid && accountForm.get('city')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('city')?.errors?.['required']">City is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="state">State</label>
+    <input id="state" formControlName="state" class="form-control" value="Maharashtra" readonly>
+    <div *ngIf="accountForm.get('state')?.invalid && accountForm.get('state')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('state')?.errors?.['required']">State is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="postalCode">Postal Code</label>
+    <input id="postalCode" formControlName="postalCode" class="form-control" value="452018" readonly>
+    <div *ngIf="accountForm.get('postalCode')?.invalid && accountForm.get('postalCode')?.touched" class="text-danger">
+      <div *ngIf="accountForm.get('postalCode')?.errors?.['required']">Postal Code is required.</div>
+      <div *ngIf="accountForm.get('postalCode')?.errors?.['pattern']">Invalid Postal Code format.</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="accountForm.invalid">Create Account</button>
+</form>

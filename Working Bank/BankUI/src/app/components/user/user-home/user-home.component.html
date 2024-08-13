@@ -1,0 +1,78 @@
+<div class="home-container" *ngIf="account; else noAccount">
+  
+  <!-- Balance Card -->
+  <div class="balance-card-container">
+    <mat-card class="balance-card">
+      <mat-card-header>
+        <mat-card-title class="balance-title">Account Balance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="balance-info">
+          <p class="balance-amount">{{ balance | currency }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card class="account-details-container">
+    <mat-card-header>
+      <mat-card-title class="account-title">Account Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="account-info">
+        <div class="account-item">
+          <mat-label>User ID:</mat-label>
+          <p>{{ account.userId }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>Account Number:</mat-label>
+          <p>{{ account.accountNumber }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>IFSC:</mat-label>
+          <p>{{ account.ifsc }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>Branch Name:</mat-label>
+          <p>{{ account.branchName }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>Account Type:</mat-label>
+          <p>{{ account.accountType }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>Address:</mat-label>
+          <p>{{ account.addressLine }}, {{ account.city }}, {{ account.state }}, {{ account.postalCode }}</p>
+        </div>
+        <div class="account-item">
+          <mat-label>Balance:</mat-label>
+          <p>{{ balance | currency }}</p>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" (click)="addBalance()">Add Balance</button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Transactions Chart -->
+  <mat-card class="transactions-chart-container">
+    <mat-card-header>
+      <mat-card-title class="chart-title">Transactions in Last 10 Days</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas id="transactionsChart"></canvas>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<ng-template #noAccount>
+  <mat-card class="no-account-container">
+    <mat-card-header>
+      <mat-card-title>No Account Found</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Please create a new account to continue.</p>
+      <button mat-raised-button color="primary" (click)="navigateToAddAccount()">Add Account</button>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

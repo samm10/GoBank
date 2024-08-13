@@ -1,0 +1,60 @@
+<div class="signup-background">
+  <div class="signup-container">
+    <h2 class="title">Signup</h2>
+    <form (ngSubmit)="signup()" class="signup-form" #signupForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" #nameInput="ngModel" required>
+        <div class="error-message" *ngIf="nameInput.invalid && (nameInput.dirty || signupForm.submitted)">Name is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" #emailInput="ngModel" required email>
+        <div class="error-message" *ngIf="emailInput.invalid && (emailInput.dirty || signupForm.submitted)">Email is required</div>
+        <div class="error-message" *ngIf="emailInput.errors?.['email'] && (emailInput.dirty || signupForm.submitted)">Invalid email format</div>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" [(ngModel)]="loginPassword" name="loginPassword" #passwordInput="ngModel" required pattern="^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$">
+        <div class="error-message" *ngIf="passwordInput.invalid && (passwordInput.dirty || signupForm.submitted)">Password is required</div>
+        <div class="error-message" *ngIf="passwordInput.errors?.['pattern'] && (passwordInput.dirty || signupForm.submitted)">Password must be at least 8 characters long, contain one uppercase letter, one special character, and one digit</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" #phoneInput="ngModel" required pattern="^[0-9]{10}$">
+        <div class="error-message" *ngIf="phoneInput.invalid && (phoneInput.dirty || signupForm.submitted)">Phone number is required</div>
+        <div class="error-message" *ngIf="phoneInput.errors?.['pattern'] && (phoneInput.dirty || signupForm.submitted)">Invalid phone number format</div>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" [(ngModel)]="age" name="age" #ageInput="ngModel" required min="18">
+        <div class="error-message" *ngIf="ageInput.invalid && (ageInput.dirty || signupForm.submitted)">Age is required</div>
+        <div class="error-message" *ngIf="ageInput.errors?.['min'] && (ageInput.dirty || signupForm.submitted)">Age must be greater than or equal to 18</div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" [(ngModel)]="gender" name="gender" #genderInput="ngModel" required>
+        <div class="error-message" *ngIf="genderInput.invalid && (genderInput.dirty || signupForm.submitted)">Gender is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="accountType">Account Type:</label>
+        <input type="text" id="accountType" [(ngModel)]="accountType" name="accountType" #accountTypeInput="ngModel" required>
+        <div class="error-message" *ngIf="accountTypeInput.invalid && (accountTypeInput.dirty || signupForm.submitted)">Account type is required</div>
+      </div>
+
+      <button type="submit" [disabled]="!signupForm.valid" class="submit-button">Sign Up</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <p class="login-link">Already have an account? <a (click)="goToLogin()">Login</a></p>
+  </div>
+</div>

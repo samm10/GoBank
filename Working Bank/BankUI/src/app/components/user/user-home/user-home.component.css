@@ -1,0 +1,140 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Angular Material theme */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styles */
+.home-container, .no-account-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Balance Card Styles */
+.balance-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.balance-card {
+  max-width: 500px; /* Adjust width for better proportion */
+  width: 100%;
+  background: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  overflow: hidden; /* Hide overflow */
+}
+
+.balance-title {
+  font-size: 24px;
+  margin-left: 100px;
+  text-align: center;
+  color: #16a716; /* Title color */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.balance-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.balance-amount {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Account Details Styles */
+.account-details-container {
+  margin: 20px auto;
+  max-width: 800px; /* Adjust width for better proportion */
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.account-title {
+  font-size: 24px;
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.account-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.account-item {
+  padding: 10px;
+}
+
+.account-item mat-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.account-item p {
+  margin: 0;
+}
+
+.mat-card-content {
+  padding: 20px;
+}
+
+.mat-card {
+  background: #fff;
+}
+
+.mat-raised-button {
+  margin-top: 20px;
+  border-radius: 5px; /* Rounded corners for button */
+  text-transform: uppercase; /* Uppercase text for button */
+  font-weight: bold;
+}
+
+/* Transactions Chart Styles */
+.transactions-chart-container {
+  margin: 20px auto;
+  max-width: 600px; /* Adjust maximum width */
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.chart-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #333; /* Ensure text is visible */
+}
+
+/* Ensure chart canvas is responsive */
+canvas {
+  width: 100% !important;
+  height: auto !important; /* Maintain aspect ratio */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

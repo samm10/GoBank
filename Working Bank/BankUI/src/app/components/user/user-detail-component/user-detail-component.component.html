@@ -1,0 +1,14 @@
+<div class="container mt-4" *ngIf="user">
+    <h2>User Details</h2>
+    <div>
+      <p><strong>User ID:</strong> {{ user.userId }}</p>
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
+      <p><strong>Age:</strong> {{ user.age }}</p>
+      <p><strong>Gender:</strong> {{ user.gender }}</p>
+      <p><strong>Account Type:</strong> {{ user.accountType }}</p>
+      <!-- Add more details as per your User model -->
+    </div>
+  </div>
+  

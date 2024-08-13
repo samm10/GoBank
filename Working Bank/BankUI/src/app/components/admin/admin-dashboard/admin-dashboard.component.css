@@ -1,0 +1,115 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Angular Material theme */
+
+.admin-dashboard {
+  background-image: url('src/app/assets/Admin.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.navbar {
+  background-color: #0e0648; /* Black */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .nav-link {
+  display: flex;
+  align-items: center;
+  color: #ffffff
+}
+
+
+.nav-link mat-icon {
+  margin-right: 8px;
+}
+
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
+.container {
+  flex: 1;
+  padding-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: #0e0648; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+  padding: 40px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-section p, .footer-section ul {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #f0f0f0;
+}
+
+.social-icon:hover {
+  color: #ffeb3b; /* Highlight color on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+

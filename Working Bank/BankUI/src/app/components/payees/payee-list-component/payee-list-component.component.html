@@ -1,0 +1,43 @@
+<h2>Payees List</h2>
+
+<!-- Search Field for Filtering Payees -->
+<div class="search-container" style="margin-bottom: 20px;">
+  <input 
+    matInput 
+    [(ngModel)]="searchTerm" 
+    (ngModelChange)="filterPayees()" 
+    placeholder="Search by User ID or Payee User ID"
+    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"
+  >
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Payee User ID</th>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Nick Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let payee of filteredPayees">
+      <td>{{ payee.userId }}</td>
+      <td>{{ payee.payeeUserId }}</td>
+      <td>{{ payee.name }}</td>
+      <td>{{ payee.accountNumber }}</td>
+      <td>{{ payee.nickName }}</td>
+      <td>
+        <button class="btn btn-sm btn-info" (click)="editPayee(payee)">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deletePayee(payee.payeeUserId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="filteredPayees && filteredPayees.length === 0" class="alert alert-warning mt-4">
+  No payees found.
+</div>
+<button class="btn btn-sm btn-success" (click)="AddPayee()">Add Payee</button>

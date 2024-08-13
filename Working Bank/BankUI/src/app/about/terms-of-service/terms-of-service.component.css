@@ -1,0 +1,59 @@
+/* terms-of-service.component.css */
+.terms-of-service {
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+
+    background-image: url('src/app/assets/User.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-in-out;    
+  }
+  
+  .terms-card {
+    margin-top: 100px;
+    background: #ffffff; /* White */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .terms-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #388e3c; /* Green */
+    background: #c8e6c9; /* Light Green Background */
+    padding: 10px;
+    border-bottom: 2px solid #388e3c;
+  }
+  
+  .terms-section {
+    margin-bottom: 20px;
+  }
+  
+  .terms-section h3 {
+    font-size: 22px;
+    color: #2e7d32; /* Dark Green */
+    margin-bottom: 10px;
+  }
+  
+  .terms-section p {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #616161; /* Dark Gray */
+  }
+  
+  a {
+    color: #388e3c; /* Green */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+

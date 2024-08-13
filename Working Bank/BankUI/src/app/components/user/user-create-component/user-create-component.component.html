@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <h2>Create User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+      <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('name')?.errors?.['required']">Name is required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+      <div *ngIf="userForm.get('phoneNumber')?.invalid && userForm.get('phoneNumber')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('phoneNumber')?.errors?.['required']">Phone Number is required.</div>
+        <div *ngIf="userForm.get('phoneNumber')?.errors?.['pattern']">Phone Number must be 10 digits.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('password')?.errors?.['required']">Password is required.</div>
+        <div *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+        <div *ngIf="userForm.get('password')?.errors?.['uppercase']">Password must contain at least one uppercase letter.</div>
+        <div *ngIf="userForm.get('password')?.errors?.['specialChar']">Password must contain at least one special character.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" formControlName="age">
+      <div *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('age')?.errors?.['required']">Age is required.</div>
+        <div *ngIf="userForm.get('age')?.errors?.['min']">Age must be at least 1.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" id="gender" formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <div *ngIf="userForm.get('gender')?.invalid && userForm.get('gender')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('gender')?.errors?.['required']">Gender is required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="accountType">Account Type</label>
+      <input type="text" class="form-control" id="accountType" formControlName="accountType">
+      <div *ngIf="userForm.get('accountType')?.invalid && userForm.get('accountType')?.touched" class="text-danger">
+        <div *ngIf="userForm.get('accountType')?.errors?.['required']">Account Type is required.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Create User</button>
+  </form>
+</div>

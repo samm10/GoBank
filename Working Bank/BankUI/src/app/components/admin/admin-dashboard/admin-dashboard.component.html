@@ -1,0 +1,91 @@
+<!-- admin-dashboard.component.html -->
+<div class="admin-dashboard">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/admin-dashboard/users">
+        <mat-icon>dashboard</mat-icon> Admin Dashboard
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/users">
+              <mat-icon>person</mat-icon> Users
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/admins">
+              <mat-icon>admin_panel_settings</mat-icon> Admins
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/transactions">
+              <mat-icon>swap_horiz</mat-icon> Transactions
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/accounts">
+              <mat-icon>account_balance</mat-icon> Accounts
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/payees">
+              <mat-icon>account_circle</mat-icon> Payees
+            </a>
+          </li>
+          <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin-dashboard/credit-balance">
+              <mat-icon>credit_card</mat-icon> Credit Balance
+            </a>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: Gobankgmailcom</p>
+          <p>Phone: +9109091717</p>
+        </div>
+        <div class="footer-section">
+          <h4>Links</h4>
+          <ul>
+            <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+            <li><a routerLink="/terms-of-service">Terms of Service</a></li>
+            <li><a routerLink="/about-us">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <a href="https://facebook.com" target="_blank" class="social-icon"><mat-icon>facebook</mat-icon></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon"><mat-icon>twitter</mat-icon></a>
+          <a href="https://linkedin.com" target="_blank" class="social-icon"><mat-icon>linkedin</mat-icon></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MAAN INFOTECH. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>

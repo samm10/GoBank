@@ -1,0 +1,89 @@
+<h1>Accounts</h1>
+
+<!-- Show only if Admin -->
+<div *ngIf="isAdmin">
+  <div class="search-container">
+    <mat-form-field appearance="fill" class="search-field">
+      <mat-label>Search by User ID</mat-label>
+      <input matInput [(ngModel)]="searchTerm" placeholder="User ID" (ngModelChange)="filterAccounts()" />
+    </mat-form-field>
+  </div>
+  
+  <table class="table mt-4" *ngIf="filteredAccounts.length > 0">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>IFSC</th>
+        <th>Balance</th>
+        <th>Branch Name</th>
+        <th>Account Type</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Postal Code</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of filteredAccounts">
+        <td>{{ account.userId }}</td>
+        <td>{{ account.ifsc }}</td>
+        <td>{{ account.accountBalance }}</td>
+        <td>{{ account.branchName }}</td>
+        <td>{{ account.accountType }}</td>
+        <td>{{ account.addressLine }}</td>
+        <td>{{ account.city }}</td>
+        <td>{{ account.state }}</td>
+        <td>{{ account.postalCode }}</td>
+        <td>
+          <a routerLink="/admin-dashboard/accounts/{{ account.userId }}/edit" class="btn btn-primary btn-sm">Edit</a>
+          <button (click)="deleteAccountsByUserId(account.userId)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="filteredAccounts.length === 0" class="alert alert-warning mt-4">
+    No accounts found.
+  </div>
+
+  <a routerLink="/admin-dashboard/accounts/create" class="btn btn-success mt-4">Add Account</a>
+</div>
+
+<!-- Show only if User -->
+<div *ngIf="!isAdmin">
+  <table class="table mt-4" *ngIf="filteredAccounts.length > 0">
+    <thead>
+      <tr>
+        <th>IFSC</th>
+        <th>Balance</th>
+        <th>Branch Name</th>
+        <th>Account Type</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Postal Code</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of filteredAccounts">
+        <td>{{ account.ifsc }}</td>
+        <td>{{ account.accountBalance }}</td>
+        <td>{{ account.branchName }}</td>
+        <td>{{ account.accountType }}</td>
+        <td>{{ account.addressLine }}</td>
+        <td>{{ account.city }}</td>
+        <td>{{ account.state }}</td>
+        <td>{{ account.postalCode }}</td>
+        <td>
+          <a routerLink="/admin-dashboard/accounts/{{ account.userId }}/edit" class="btn btn-primary btn-sm">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="filteredAccounts.length === 0" class="alert alert-warning mt-4">
+    No accounts found.
+  </div>
+</div>

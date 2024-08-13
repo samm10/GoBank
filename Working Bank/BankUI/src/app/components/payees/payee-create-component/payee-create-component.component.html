@@ -1,0 +1,19 @@
+<form [formGroup]="payeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="userId">User ID:</label>
+    <input id="userId" formControlName="userId" readonly>
+  </div>
+  <div>
+    <label for="payeeId">Payee ID:</label>
+    <input id="payeeId" formControlName="payeeId">
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="nickName">Nick Name:</label>
+    <input id="nickName" formControlName="nickName">
+  </div>
+  <button type="submit">Add Payee</button>
+</form>

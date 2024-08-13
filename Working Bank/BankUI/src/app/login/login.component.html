@@ -1,0 +1,43 @@
+<div class="login-background">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="userId">User ID</label>
+        <input 
+          type="text" 
+          id="userId" 
+          formControlName="userId" 
+          class="form-control"
+        >
+        <div *ngIf="loginForm.get('userId')?.invalid && loginForm.get('userId')?.touched" class="text-danger">
+          User ID is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="loginPassword" 
+          class="form-control"
+        >
+        <div *ngIf="loginForm.get('loginPassword')?.invalid && loginForm.get('loginPassword')?.touched" class="text-danger">
+          <div *ngIf="loginForm.get('loginPassword')?.errors?.['required']">Password is required.</div>
+          <div *ngIf="loginForm.get('loginPassword')?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+          <div *ngIf="loginForm.get('loginPassword')?.errors?.['pattern']">Password must contain at least one uppercase letter and one special character.</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+    </form>
+    <a routerLink="/signup" class="signup-link">New User? Register Here</a>
+    <div class="additional-links">
+      <a routerLink="/forgot-password" class="forgot-link">Forgot Password?</a>
+    </div>
+  </div>
+</div>

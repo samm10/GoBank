@@ -1,0 +1,61 @@
+/* privacy-policy.component.css */
+.privacy-policy {
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+
+    background-image: url('src/app/assets/User.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .privacy-card {
+    margin-top: 100px;
+    background: #ffffff; /* White */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .privacy-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2196f3; /* Blue */
+    background: #e1f5fe; /* Light Blue Background */
+    padding: 10px;
+    border-bottom: 2px solid #2196f3;
+  }
+  
+  .privacy-section {
+    margin-bottom: 20px;
+  }
+  
+  .privacy-section h3 {
+    font-size: 22px;
+    color: #1976d2; /* Medium Blue */
+    margin-bottom: 10px;
+  }
+  
+  .privacy-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #424242; /* Dark Gray */
+  }
+  
+  a {
+    color: #2196f3; /* Blue */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  
+  
+  
